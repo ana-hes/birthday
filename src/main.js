@@ -26,7 +26,8 @@ birthdayForm.addEventListener('submit', (e) => {
     }else{
       let weeksToBD = nextBirthday.diff(today, "week");
       if(weeksToBD == 0){
-        dialogContent.innerText = `Od Twoich narodzin minęło ${daysPassed} dni, a następne masz w tym tygodniu`;
+        dialogContent.innerText = `Od Twoich narodzin minęło ${daysPassed} dni`;
+        alert("Masz urodziny w tym tygodniu!")
       }else{
         dialogContent.innerText = `Od Twoich narodzin minęło ${daysPassed} dni, do następnych zostało ${weeksToBD} tygodni`;
       }
