@@ -7,14 +7,18 @@ import dayjs from 'dayjs';
 
 const birthdayForm = document.getElementById('birthdayForm');
 const birthday = document.getElementById('birthday');
+const resultDialog = document.getElementById('resultDialog');
+const dialogContent = document.getElementById('dialogContent');
+const closeDialogBtn = document.getElementById('closeDialog');
 
 birthdayForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let today = dayjs().startOf('day');
     let daysPassed = today.diff(birthday, 'day');
+    const birthDate = dayjs(birthday.value).startOf('day');
     dialogContent.innerText = `Od Twoich narodzin minęło ${daysPassed} dni`;
     resultDialog.showModal();
-    if (today.date() === birthday.date() && today.month() === birthday.month()){
+    if (today.date() === birthDate.date() && today.month() === birthDate.month()){
       alert("Wszystkiego najlepszego!")
     }
     closeDialogBtn.addEventListener('click', () => {
