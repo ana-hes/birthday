@@ -11,10 +11,10 @@ const birthday = document.getElementById('birthday');
 birthdayForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let today = dayjs().startOf('day');
-    let daysPassed = today.diff(birthDate, 'day');
+    let daysPassed = today.diff(birthday, 'day');
     dialogContent.innerText = `Od Twoich narodzin minęło ${daysPassed} dni`;
     resultDialog.showModal();
-    if (today.date() === birthDate.date() && today.month() === birthDate.month()){
+    if (today.date() === birthday.date() && today.month() === birthday.month()){
       alert("Wszystkiego najlepszego!")
     }
     closeDialogBtn.addEventListener('click', () => {
