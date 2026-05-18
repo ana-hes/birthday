@@ -25,7 +25,11 @@ birthdayForm.addEventListener('submit', (e) => {
       dialogContent.innerText = `Od Twoich narodzin minęło ${daysPassed} dni`;
     }else{
       let weeksToBD = nextBirthday.diff(today, "week");
-      dialogContent.innerText = `Od Twoich narodzin minęło ${daysPassed} dni, do następnych zostało ${weeksToBD} tygodni`;
+      if(weeksToBD == 0){
+        dialogContent.innerText = `Od Twoich narodzin minęło ${daysPassed} dni, a następne masz w tym tygodniu`;
+      }else{
+        dialogContent.innerText = `Od Twoich narodzin minęło ${daysPassed} dni, do następnych zostało ${weeksToBD} tygodni`;
+      }
     }
     resultDialog.showModal();
     closeDialogBtn.addEventListener('click', () => {
